@@ -1,22 +1,9 @@
-import { Fragment } from 'react'
+import { MouseEvent } from 'react'
 
 const ListGroup = () => {
   const items = ['New York', 'San Francisco', 'Tokyo', 'London', 'Paris']
-  const fruits = ['Apple', 'Orange', 'Banana', 'Grape']
-  const vegetables = ['kale', 'broccoli', 'swiss chard']
 
-  // == use function
-  const fruitList = () => {
-    return fruits.map((fruit) => (
-      <li
-        key={fruit}
-        className='list-group-item text-bg-warning'
-        onClick={(event) => console.log(event)}
-      >
-        {fruit}
-      </li>
-    ))
-  }
+  const handleClick = (event: MouseEvent) => console.log(event)
 
   return (
     <>
@@ -28,12 +15,13 @@ const ListGroup = () => {
           <li
             key={index}
             className='list-group-item text-bg-success'
-            onClick={() => console.log(`You clicked ${item} at index ${index}`)}
+            onClick={handleClick}
+            // onClick={(event) => console.log(event)}
+            // onClick={() => console.log(`You clicked ${item} at index ${index}`)}
           >
             {item}
           </li>
         ))}
-        {fruits.length !== 0 ? fruitList() : 'No fruits availabel at this time'}
       </ul>
     </>
   )
