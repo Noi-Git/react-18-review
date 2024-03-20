@@ -8,7 +8,11 @@ const ListGroup = () => {
   // == use function
   const fruitList = () => {
     return fruits.map((fruit) => (
-      <li key={fruit} className='list-group-item text-bg-warning'>
+      <li
+        key={fruit}
+        className='list-group-item text-bg-warning'
+        onClick={(event) => console.log(event)}
+      >
         {fruit}
       </li>
     ))
