@@ -34,6 +34,7 @@ const ListGroup = () => {
           </li>
         ))}
         {fruits.length !== 0 ? fruitList() : 'No fruits availabel at this time'}
+        {fruits.length !== 0 && fruitList()}
       </ul>
       {vegetableList}
     </>
