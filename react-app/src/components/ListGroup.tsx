@@ -1,6 +1,9 @@
+import { useState } from 'react'
+
 const ListGroup = () => {
   const items = ['New York', 'San Francisco', 'Tokyo', 'London', 'Paris']
-  let selectedIndex = 0
+
+  const [selectedIndex, setSelectedIndex] = useState(0)
 
   return (
     <>
@@ -17,7 +20,7 @@ const ListGroup = () => {
                 : 'list-group-item text-bg-light'
             }
             onClick={() => {
-              selectedIndex = index
+              setSelectedIndex(index)
             }}
           >
             {item}
