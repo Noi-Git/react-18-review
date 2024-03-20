@@ -14,29 +14,23 @@ const ListGroup = () => {
     ))
   }
 
-  // == use variable
-  const vegetableList =
-    vegetables.length !== 0 ? (
-      <li key={'vegies'} className='list-group-item text-bg-info'>
-        Healthy vegies
-      </li>
-    ) : null
-
   return (
     <>
       <h1>Hello List</h1>
       <ul className='list-group'>
         <li className='list-group-item'>An item</li>
         <li className='list-group-item'>A second item</li>
-        {items.map((item) => (
-          <li key={item} className='list-group-item text-bg-success'>
+        {items.map((item, index) => (
+          <li
+            key={index}
+            className='list-group-item text-bg-success'
+            onClick={() => console.log(`You clicked ${item} at index ${index}`)}
+          >
             {item}
           </li>
         ))}
         {fruits.length !== 0 ? fruitList() : 'No fruits availabel at this time'}
-        {fruits.length !== 0 && fruitList()}
       </ul>
-      {vegetableList}
     </>
   )
 }
