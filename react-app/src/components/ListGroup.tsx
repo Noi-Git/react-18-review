@@ -10,7 +10,9 @@ const ListGroup = () => {
         <li className='list-group-item'>An item</li>
         <li className='list-group-item'>A second item</li>
         {items.map((item) => (
-          <li className='list-group-item'>{item}</li>
+          <li key={item} className='list-group-item'>
+            {item}
+          </li>
         ))}
       </ul>
     </>
