@@ -1,11 +1,8 @@
 // import { useState } from 'react'
 import './App.css'
-import Message from './message'
 
 function App() {
-  return <div>
-    <Message/>
-  </div>
+  return <div></div>
 }
 
 export default App
