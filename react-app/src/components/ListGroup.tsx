@@ -2,6 +2,7 @@ import { MouseEvent } from 'react'
 
 const ListGroup = () => {
   const items = ['New York', 'San Francisco', 'Tokyo', 'London', 'Paris']
+  const selectedIndex = 0
 
   const handleClick = (event: MouseEvent) => console.log(event)
 
@@ -14,10 +15,12 @@ const ListGroup = () => {
         {items.map((item, index) => (
           <li
             key={index}
-            className='list-group-item text-bg-success'
+            className={
+              selectedIndex === index
+                ? 'list-group-item text-bg-success active'
+                : 'list-group-item text-bg-light'
+            }
             onClick={handleClick}
-            // onClick={(event) => console.log(event)}
-            // onClick={() => console.log(`You clicked ${item} at index ${index}`)}
           >
             {item}
           </li>
