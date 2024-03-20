@@ -1,10 +1,6 @@
-import { MouseEvent } from 'react'
-
 const ListGroup = () => {
   const items = ['New York', 'San Francisco', 'Tokyo', 'London', 'Paris']
-  const selectedIndex = 0
-
-  const handleClick = (event: MouseEvent) => console.log(event)
+  let selectedIndex = 0
 
   return (
     <>
@@ -20,7 +16,9 @@ const ListGroup = () => {
                 ? 'list-group-item text-bg-success active'
                 : 'list-group-item text-bg-light'
             }
-            onClick={handleClick}
+            onClick={() => {
+              selectedIndex = index
+            }}
           >
             {item}
           </li>
