@@ -3,15 +3,9 @@ import { Fragment } from 'react'
 const ListGroup = () => {
   const items = ['New York', 'San Francisco', 'Tokyo', 'London', 'Paris']
   const fruits = ['Apple', 'Orange', 'Banana', 'Grape']
-  // normal way to loop through an array with out jsx expression
-  // if (fruits.length === 0)
-  //   return (
-  //     <>
-  //       <h1>List</h1>
-  //       <p>No item found</p>
-  //     </>
-  //   )
+  const vegetables = ['kale', 'broccoli', 'swiss chard']
 
+  // == use function
   const fruitList = () => {
     return fruits.map((fruit) => (
       <li key={fruit} className='list-group-item text-bg-warning'>
@@ -19,6 +13,14 @@ const ListGroup = () => {
       </li>
     ))
   }
+
+  // == use variable
+  const vegetableList =
+    vegetables.length !== 0 ? (
+      <li key={'vegies'} className='list-group-item text-bg-info'>
+        Healthy vegies
+      </li>
+    ) : null
 
   return (
     <>
@@ -33,6 +35,7 @@ const ListGroup = () => {
         ))}
         {fruits.length !== 0 ? fruitList() : 'No fruits availabel at this time'}
       </ul>
+      {vegetableList}
     </>
   )
 }
