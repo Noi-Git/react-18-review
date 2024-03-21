@@ -47,4 +47,5 @@ const List = styled.ul`
 
 const ListItem = styled.li<ListItemStyleProps>`
   padding: 5px;
+  background: ${(props) => (props.active ? 'yellow' : 'none')};
 `
