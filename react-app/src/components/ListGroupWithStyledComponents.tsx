@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 
+interface ListItemStyleProps {
+  active: boolean
+}
 interface ListGroupProps {
   items: string[]
   heading: string
@@ -12,7 +15,7 @@ const ListGroupWithStyledComponents = ({
   heading,
   onSelectItem,
 }: ListGroupProps) => {
-  const [selectedIndex, setSelectedIndex] = useState(-1)
+  const [selectedIndex, setSelectedIndex] = useState(0)
 
   return (
     <>
@@ -21,6 +24,7 @@ const ListGroupWithStyledComponents = ({
         {items.map((item, index) => (
           <ListItem
             key={index}
+            active={index === selectedIndex}
             onClick={() => {
               setSelectedIndex(index)
               onSelectItem(item)
@@ -41,6 +45,6 @@ const List = styled.ul`
   padding: 0;
 `
 
-const ListItem = styled.li`
+const ListItem = styled.li<ListItemStyleProps>`
   padding: 5px;
 `
