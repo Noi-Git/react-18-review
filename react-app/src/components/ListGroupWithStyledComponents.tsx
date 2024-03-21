@@ -17,15 +17,10 @@ const ListGroupWithStyledComponents = ({
   return (
     <>
       <List className='list-group'>
-        <h1 className='list-group-item text-bg-warning'>{heading}</h1>
+        <h1>{heading}</h1>
         {items.map((item, index) => (
           <ListItem
             key={index}
-            className={
-              selectedIndex === index
-                ? 'list-group-item text-bg-success active'
-                : 'list-group-item text-bg-light'
-            }
             onClick={() => {
               setSelectedIndex(index)
               onSelectItem(item)
