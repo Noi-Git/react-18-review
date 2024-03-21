@@ -1,32 +1,25 @@
-// import { useState } from 'react'
-// import { useState } from 'react'
+import { useState } from 'react'
 import './App.css'
-// import AlertDismiss from './components/AlertDismiss'
-// import Button from './components/Button'
-import ListGroupWithStyledComponents from './components/ListGroupWithStyledComponents'
+import AlertDismiss from './components/AlertDismiss'
+import Button from './components/Button'
+import Like from './components/Like'
 
 function App() {
-  // const [alertVisible, setAlertVisible] = useState(false)
-  const items = ['New York', 'San Francisco', 'Tokyo', 'London', 'Paris']
-
-  const handleSelectItem = (item: string) => {
-    console.log(`You clicked ${item}`)
-  }
+  const [alertVisible, setAlertVisible] = useState(false)
 
   return (
     <>
-      {/* {alertVisible && (
+      {alertVisible && (
         <AlertDismiss onClose={() => setAlertVisible(false)}>
           Hello! <strong>I am full</strong>
         </AlertDismiss>
       )}
 
-      <Button onClick={() => setAlertVisible(true)}>Show Alert Message</Button> */}
-      <ListGroupWithStyledComponents
-        items={items}
-        heading='Cities'
-        onSelectItem={handleSelectItem}
-      />
+      <Button onClick={() => setAlertVisible(true)}>Show Alert Message</Button>
+      <br />
+      <br />
+      <br />
+      <Like />
     </>
   )
 }
