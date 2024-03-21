@@ -5,15 +5,13 @@ interface ListGroupProps {
   heading: string
 }
 
-const ListGroup = (props: ListGroupProps) => {
-  const items = ['New York', 'San Francisco', 'Tokyo', 'London', 'Paris']
-
+const ListGroup = ({ items, heading }: ListGroupProps) => {
   const [selectedIndex, setSelectedIndex] = useState(-1)
 
   return (
     <>
       <ul className='list-group'>
-        <h1 className='list-group-item text-bg-warning'>USA States</h1>
+        <h1 className='list-group-item text-bg-warning'>{heading}</h1>
         {items.map((item, index) => (
           <li
             key={index}
