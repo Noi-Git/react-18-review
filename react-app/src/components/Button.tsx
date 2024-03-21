@@ -1,9 +1,14 @@
 interface ButtonProps {
   children: string
+  onClick: () => void
 }
 
-const Button = ({ children }: ButtonProps) => {
-  return <div className='btn btn-primary'>{children}</div>
+const Button = ({ children, onClick }: ButtonProps) => {
+  return (
+    <div className='btn btn-primary' onClick={onClick}>
+      {children}
+    </div>
+  )
 }
 
 export default Button
