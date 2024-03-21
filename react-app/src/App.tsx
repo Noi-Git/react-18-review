@@ -19,7 +19,7 @@ function App() {
       <br />
       <br />
       <br />
-      <Like />
+      <Like onClick={() => console.log('Clicked!!')} />
     </>
   )
 }
