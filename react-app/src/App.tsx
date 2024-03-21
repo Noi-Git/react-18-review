@@ -1,13 +1,11 @@
 // import { useState } from 'react'
 import './App.css'
-import Alert from './components/Alert'
+import Button from './components/Button'
 
 function App() {
   return (
     <div>
-      <Alert>
-        Hello! <strong> you</strong>
-      </Alert>
+      <Button>My button</Button>
     </div>
   )
 }
