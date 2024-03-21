@@ -1,8 +1,8 @@
-// import { useState } from 'react'
 import { useState } from 'react'
 import './App.css'
 import AlertDismiss from './components/AlertDismiss'
 import Button from './components/Button'
+import Like from './components/Like'
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false)
@@ -16,6 +16,10 @@ function App() {
       )}
 
       <Button onClick={() => setAlertVisible(true)}>Show Alert Message</Button>
+      <br />
+      <br />
+      <br />
+      <Like onClick={() => console.log('Clicked!!')} />
     </>
   )
 }
