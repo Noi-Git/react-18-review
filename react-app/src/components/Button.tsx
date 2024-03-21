@@ -1,6 +1,6 @@
 interface ButtonProps {
   children: string
-  color?: string
+  color?: 'primary' | 'secondary' | 'danger' | 'warning'
   onClick: () => void
 }
 

@@ -5,7 +5,9 @@ import Button from './components/Button'
 function App() {
   return (
     <div>
-      <Button onClick={() => console.log('Yeah!!!')}>My Button</Button>
+      <Button color='danger' onClick={() => console.log('Yeah!!!')}>
+        My Button
+      </Button>
     </div>
   )
 }
