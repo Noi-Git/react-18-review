@@ -1,8 +1,10 @@
+import { ReactNode } from 'react'
+
 interface AlertProp {
-  text: string
+  children: ReactNode
 }
-function Alert({ text }) {
-  return <div className='alert alert-primary'>{text}</div>
+function Alert({ children }: AlertProp) {
+  return <div className='alert alert-primary'>{children}</div>
 }
 
 export default Alert
