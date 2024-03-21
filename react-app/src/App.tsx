@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       {alertVisible && (
-        <AlertDismiss>
+        <AlertDismiss onClose={() => setAlertVisible(false)}>
           Hello! <strong>I am full</strong>
         </AlertDismiss>
       )}
