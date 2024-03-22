@@ -1,8 +1,9 @@
 interface CartItemProps {
   cartItems: string[]
+  onClear: () => void
 }
 
-const Cart = ({ cartItems }: CartItemProps) => {
+const Cart = ({ cartItems, onClear }: CartItemProps) => {
   return (
     <>
       <div>Cart</div>
@@ -11,6 +12,7 @@ const Cart = ({ cartItems }: CartItemProps) => {
           <li key={index}>{item}</li>
         ))}
       </ul>
+      <button onClick={onClear}>Clear</button>
     </>
   )
 }

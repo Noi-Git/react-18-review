@@ -12,7 +12,8 @@ const ShareState = () => {
   return (
     <>
       <NavBar cartItemsCount={cartItems.length} />
-      <Cart cartItems={cartItems} />
+      {/* all the update ex. clear cart, should be done where the state is set */}
+      <Cart cartItems={cartItems} onClear={() => setCartItems([])} />
     </>
   )
 }
