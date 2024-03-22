@@ -4,6 +4,7 @@ import AlertDismiss from './components/AlertDismiss'
 import Button from './components/Button'
 import Like from './components/Like'
 import ImmutableObject from './components/ImmutableObject'
+import NestedObject from './components/NestedObject'
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false)
@@ -24,6 +25,9 @@ function App() {
       <br />
       <br />
       <ImmutableObject />
+      <br />
+      <br />
+      <NestedObject />
     </>
   )
 }
