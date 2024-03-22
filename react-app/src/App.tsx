@@ -7,6 +7,7 @@ import ImmutableObject from './components/ImmutableObject'
 import NestedObject from './components/NestedObject'
 import ArrayUpdateWithImmer from './components/ArrayUpdateWithImmer'
 import ShareState from './components/Product/ShareState'
+import MainApp from './components/UpdateStateExercise/MainApp'
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false)
@@ -36,6 +37,9 @@ function App() {
       <br />
       <br />
       <ShareState />
+      <br />
+      <br />
+      <MainApp />
     </>
   )
 }
