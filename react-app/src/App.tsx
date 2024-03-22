@@ -5,6 +5,7 @@ import Button from './components/Button'
 import Like from './components/Like'
 import ImmutableObject from './components/ImmutableObject'
 import NestedObject from './components/NestedObject'
+import ArrayUpdateWithImmer from './ArrayUpdateWithImmer'
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false)
@@ -28,6 +29,9 @@ function App() {
       <br />
       <br />
       <NestedObject />
+      <br />
+      <br />
+      <ArrayUpdateWithImmer />
     </>
   )
 }
