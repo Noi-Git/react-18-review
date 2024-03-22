@@ -3,6 +3,7 @@ import './App.css'
 import AlertDismiss from './components/AlertDismiss'
 import Button from './components/Button'
 import Like from './components/Like'
+import ImmutableObject from './components/ImmutableObject'
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false)
@@ -20,6 +21,9 @@ function App() {
       <br />
       <br />
       <Like onClick={() => console.log('Clicked!!')} />
+      <br />
+      <br />
+      <ImmutableObject />
     </>
   )
 }
