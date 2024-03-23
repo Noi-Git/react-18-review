@@ -10,6 +10,7 @@ import ShareState from './components/Product/ShareState'
 import MainApp from './components/UpdateStateExercise/MainApp'
 import Pizza from './components/PizzaAddToArray/Pizza'
 import ShoppingCart from './components/ShoppingCart/ShoppingCart'
+import ExpandableText from './components/ExpandableText/ExpandableText'
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false)
@@ -47,6 +48,22 @@ function App() {
       <br />
       <br />
       <ShoppingCart />
+      <br />
+      <br />
+      <ExpandableText maxChars={10}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia
+        veritatis commodi ipsum aperiam explicabo sit officia. Repudiandae
+        suscipit soluta, quam quis harum vero commodi delectus assumenda
+        dignissimos maiores nam consequuntur ipsam ab. Corporis maiores nisi
+        placeat dolorum voluptate itaque odio! Autem, dolores ipsa. Eveniet,
+        amet doloribus? Nesciunt magni odit corporis ducimus ut deleniti
+        doloremque, porro quaerat incidunt, nam recusandae dolores blanditiis
+        praesentium officiis minima sed architecto? Quibusdam animi molestiae,
+        eligendi hic exercitationem quae repudiandae excepturi assumenda
+        reprehenderit magnam nisi deserunt et facilis. Incidunt explicabo eos
+        enim cumque dolores ullam minima nostrum nam, autem sapiente cupiditate,
+        excepturi possimus esse a.
+      </ExpandableText>
     </>
   )
 }
