@@ -3,12 +3,14 @@ import { FormEvent, useRef } from 'react'
 const Form = () => {
   // add type to useRef to fix the error or nameRef.current.value
   const nameRef = useRef<HTMLInputElement>(null)
+  const ageRef = useRef<HTMLInputElement>(null)
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault()
     // need to check that the current value is not null
     // otherwise will get the complie error
     if (nameRef.current !== null) console.log(nameRef.current.value)
+    if (ageRef.current !== null) console.log(ageRef.current.value)
   }
 
   return (
@@ -23,7 +25,7 @@ const Form = () => {
         <label htmlFor='age' className='form-label'>
           Age
         </label>
-        <input id='age' type='number' className='form-control' />
+        <input ref={ageRef} id='age' type='number' className='form-control' />
       </div>
       <button className='btn btn-primary' type='submit'>
         Submit
