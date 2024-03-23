@@ -11,6 +11,7 @@ const Form = () => {
     if (nameRef.current !== null) person.name = nameRef.current.value
     // === need to use parseInt because the age is number
     if (ageRef.current !== null) person.age = parseInt(ageRef.current.value)
+    console.log(person)
   }
 
   return (
