@@ -5,7 +5,9 @@ const Form = () => {
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault()
-    console.log(nameRef.current)
+    // need to check that the current value is not null
+    // otherwise will get the complie error
+    if (nameRef.current !== null) console.log(nameRef.current.value)
   }
 
   return (
