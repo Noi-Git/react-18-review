@@ -1,16 +1,16 @@
 import { FormEvent, useRef } from 'react'
 
 const Form = () => {
-  // add type to useRef to fix the error or nameRef.current.value
   const nameRef = useRef<HTMLInputElement>(null)
   const ageRef = useRef<HTMLInputElement>(null)
+  //=== submit object to the server
+  const person = { name: '', age: 0 }
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault()
-    // need to check that the current value is not null
-    // otherwise will get the complie error
-    if (nameRef.current !== null) console.log(nameRef.current.value)
-    if (ageRef.current !== null) console.log(ageRef.current.value)
+    if (nameRef.current !== null) person.name = nameRef.current.value
+    // === need to use parseInt because the age is number
+    if (ageRef.current !== null) person.age = parseInt(ageRef.current.value)
   }
 
   return (
