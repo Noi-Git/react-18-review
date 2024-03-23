@@ -9,6 +9,7 @@ import ArrayUpdateWithImmer from './components/ArrayUpdateWithImmer'
 import ShareState from './components/Product/ShareState'
 import MainApp from './components/UpdateStateExercise/MainApp'
 import Pizza from './components/PizzaAddToArray/Pizza'
+import ShoppingCart from './components/ShoppingCart/ShoppingCart'
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false)
@@ -22,7 +23,6 @@ function App() {
       )}
 
       <Button onClick={() => setAlertVisible(true)}>Show Alert Message</Button>
-      <br />
       <br />
       <br />
       <Like onClick={() => console.log('Clicked!!')} />
@@ -44,6 +44,9 @@ function App() {
       <br />
       <br />
       <Pizza />
+      <br />
+      <br />
+      <ShoppingCart />
     </>
   )
 }
