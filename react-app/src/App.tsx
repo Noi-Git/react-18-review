@@ -8,6 +8,7 @@ import NestedObject from './components/NestedObject'
 import ArrayUpdateWithImmer from './components/ArrayUpdateWithImmer'
 import ShareState from './components/Product/ShareState'
 import MainApp from './components/UpdateStateExercise/MainApp'
+import Pizza from './components/PizzaAddToArray/Pizza'
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false)
@@ -40,6 +41,9 @@ function App() {
       <br />
       <br />
       <MainApp />
+      <br />
+      <br />
+      <Pizza />
     </>
   )
 }
