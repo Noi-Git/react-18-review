@@ -5,7 +5,7 @@ interface ExpandableTextProps {
 }
 const ExpandableText = ({ children, maxChars = 100 }: ExpandableTextProps) => {
   const [isExpanded, setIsExpanded] = useState(false)
-  const text = children.substring(0, maxChars)
+  const text = isExpanded ? children : children.substring(0, maxChars)
 
   return (
     <>
