@@ -5,7 +5,7 @@ interface ExpandableTextProps {
 }
 const ExpandableText = ({ children, maxChars = 100 }: ExpandableTextProps) => {
   const [isExpanded, setIsExpanded] = useState(false)
-  const text = isExpanded ? children : children.substring(0, maxChars)
+  const text = isExpanded ? children : children.substring(0, maxChars) + '... '
 
   return (
     <>
@@ -13,7 +13,7 @@ const ExpandableText = ({ children, maxChars = 100 }: ExpandableTextProps) => {
         <p>{children}</p>
       ) : (
         <p>
-          {text}...{' '}
+          {text}
           <button onClick={() => setIsExpanded(!isExpanded)}>
             {isExpanded ? 'Less' : 'More'}
           </button>
