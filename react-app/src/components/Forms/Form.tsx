@@ -1,7 +1,8 @@
 import { FormEvent, useRef } from 'react'
 
 const Form = () => {
-  const nameRef = useRef(null)
+  // add type to useRef to fix the error or nameRef.current.value
+  const nameRef = useRef<HTMLInputElement>(null)
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault()
