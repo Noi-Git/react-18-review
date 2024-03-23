@@ -11,12 +11,13 @@ import MainApp from './components/UpdateStateExercise/MainApp'
 import Pizza from './components/PizzaAddToArray/Pizza'
 import ShoppingCart from './components/ShoppingCart/ShoppingCart'
 import ExpandableText from './components/ExpandableText/ExpandableText'
+import Form from './components/Forms/Form'
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false)
 
   return (
-    <>
+    <div className='container'>
       {alertVisible && (
         <AlertDismiss onClose={() => setAlertVisible(false)}>
           Hello! <strong>I am full</strong>
@@ -64,7 +65,8 @@ function App() {
         enim cumque dolores ullam minima nostrum nam, autem sapiente cupiditate,
         excepturi possimus esse a.
       </ExpandableText>
-    </>
+      <Form />
+    </div>
   )
 }
 
