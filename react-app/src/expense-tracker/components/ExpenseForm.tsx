@@ -1,4 +1,6 @@
 import { z } from 'zod'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { categories } from '../../App'
 
 const schema = z.object({
@@ -10,6 +12,7 @@ const schema = z.object({
 type ExpenseFormData = z.infer<typeof schema>
 
 const ExpenseForm = () => {
+  useForm<ExpenseFormData>({ resolver: zodResolver(schema) })
   return (
     <form>
       <div className='mb-3'>
