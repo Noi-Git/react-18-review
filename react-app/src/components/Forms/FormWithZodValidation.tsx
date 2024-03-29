@@ -1,4 +1,5 @@
 import { useForm, FieldValues } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
 const schema = z.object({
@@ -8,17 +9,12 @@ const schema = z.object({
 
 type FormData = z.infer<typeof schema>
 
-interface FormData {
-  name: string
-  age: number
-}
-
 const FormWithZodValidation = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>()
+  } = useForm<FormData>({ resolver: zodResolver(schema) })
   console.log('formState....errors...', errors)
 
   const onsubmit = (data: FieldValues) => console.log(data)
@@ -27,24 +23,19 @@ const FormWithZodValidation = () => {
     <form onSubmit={handleSubmit(onsubmit)}>
       <div className='mb-3'>
         <label htmlFor='name' className='form-label'>
-          Name with Form Hook
+          Name validation with Zod
         </label>
         <input
-          {...(register('name'), { required: true, minLength: 3 })}
+          {...register('name')}
           id='name'
           type='text'
           className='form-control'
         />
-        {errors.name?.type === 'required' && (
-          <p className='text-danger'>The name field is required.</p>
-        )}
-        {errors.name?.type === 'minLength' && (
-          <p className='text-danger'>The name must be at least 3 characters</p>
-        )}
+        {errors.name && <p className='text-danger'>{errors.name.message}</p>}
       </div>
       <div className='mb-3'>
         <label htmlFor='age' className='form-label'>
-          Age with Form Hook
+          Age validation with Zod
         </label>
         <input
           {...register('age')}
@@ -53,6 +44,7 @@ const FormWithZodValidation = () => {
           className='form-control'
         />
       </div>
+      {errors.age && <p className='text-danger'>{errors.age.message}</p>}
       <button className='btn btn-primary' type='submit'>
         Submit
       </button>

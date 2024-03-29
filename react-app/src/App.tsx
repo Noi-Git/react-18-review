@@ -14,6 +14,7 @@ import ExpandableText from './components/ExpandableText/ExpandableText'
 import Form from './components/Forms/Form'
 import FormUseState from './components/Forms/FormUseState'
 import FormHook from './components/Forms/FormHook'
+import FormWithZodValidation from './components/Forms/FormWithZodValidation'
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false)
@@ -76,6 +77,9 @@ function App() {
       <br />
       <br />
       <FormHook />
+      <br />
+      <br />
+      <FormWithZodValidation />
     </div>
   )
 }
