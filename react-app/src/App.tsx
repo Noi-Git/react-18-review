@@ -22,7 +22,17 @@ function App() {
   return (
     <div className='container'>
       <div className='mt-5 mb-3'>
-        <ExpenseForm />
+        <ExpenseForm
+          onSubmit={(expense) =>
+            setExpenses([
+              ...expenses,
+              {
+                ...expense,
+                id: expenses.length + 1,
+              },
+            ])
+          }
+        />
       </div>
       <div className='mt-5 mb-3'>
         <ExpenseFilter
