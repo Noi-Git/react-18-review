@@ -1,8 +1,9 @@
 import { useForm, FieldValues } from 'react-hook-form'
 
 const FormHook = () => {
-  const { register, handleSubmit } = useForm()
-  console.log(register('name'))
+  const { register, handleSubmit, formState } = useForm()
+  console.log(formState)
+  // console.log(formState.errors)
 
   const onsubmit = (data: FieldValues) => console.log(data)
 
@@ -13,7 +14,7 @@ const FormHook = () => {
           Name with Form Hook
         </label>
         <input
-          {...register('name')}
+          {...(register('name'), { required: true, minLength: 3 })}
           id='name'
           type='text'
           className='form-control'
