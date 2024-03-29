@@ -1,7 +1,7 @@
+import { categories } from '../../App'
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { categories } from '../../App'
 
 const schema = z.object({
   description: z.string().min(3).max(50),
@@ -29,6 +29,9 @@ const ExpenseForm = () => {
           type='text'
           className='form-control'
         />
+        {errors.description && (
+          <p className='text-danger'>{errors.description.message}</p>
+        )}
       </div>
       <div className='mb-3'>
         <label htmlFor='amount' className='form-label'>
@@ -40,6 +43,9 @@ const ExpenseForm = () => {
           type='number'
           className='form-control'
         />
+        {errors.amount && (
+          <p className='text-danger'>{errors.amount.message}</p>
+        )}
       </div>
       <div className='mb-3'>
         <label htmlFor='category' className='form-label'>
@@ -58,6 +64,9 @@ const ExpenseForm = () => {
             </option>
           ))}
         </select>
+        {errors.category && (
+          <p className='text-danger'>{errors.category.message}</p>
+        )}
       </div>
       <button className='btn btn-primary'>Submit</button>
     </form>
