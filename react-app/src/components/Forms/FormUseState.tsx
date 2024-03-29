@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
 
 const FormUseState = () => {
   const [person, setPerson] = useState({
