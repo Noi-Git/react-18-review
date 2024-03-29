@@ -6,6 +6,8 @@ const schema = z.object({
   age: z.number().min(18),
 })
 
+type FormData = z.infer<typeof schema>
+
 interface FormData {
   name: string
   age: number
