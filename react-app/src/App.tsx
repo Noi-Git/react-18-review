@@ -13,6 +13,10 @@ function App() {
     { id: 4, description: 'ddd', amount: 63.29, category: 'Groceries' },
   ])
 
+  const visibleExpenses = selectedCategory
+    ? expenses.filter((e) => e.category === selectedCategory)
+    : expenses
+
   return (
     <div className='container'>
       <div className='mt-5 mb-3'>
@@ -22,7 +26,7 @@ function App() {
       </div>
 
       <ExpenseList
-        expenses={expenses}
+        expenses={visibleExpenses}
         onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}
       />
     </div>
