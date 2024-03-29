@@ -1,11 +1,11 @@
 import { useForm } from 'react-hook-form'
 
 const FormHook = () => {
-  const { register } = useForm()
+  const { register, handleSubmit } = useForm()
   console.log(register('name'))
 
   return (
-    <form onSubmit={() => {}}>
+    <form onSubmit={handleSubmit((data) => console.log(data))}>
       <div className='mb-3'>
         <label htmlFor='name' className='form-label'>
           Name with Form Hook
