@@ -4,7 +4,9 @@ import { z } from 'zod'
 
 const schema = z.object({
   name: z.string().min(3, { message: 'Name must be at least 3 characters' }),
-  age: z.number().min(18, { message: 'Age must be at least 18' }),
+  age: z
+    .number({ invalid_type_error: 'Age field is required' })
+    .min(18, { message: 'Age must be at least 18' }),
 })
 
 type FormData = z.infer<typeof schema>
