@@ -7,9 +7,10 @@ interface Expense {
 
 interface Props {
   expenses: Expense[]
+  onDelete: (id: number) => void
 }
 
-const ExpenseList = ({ expenses }: Props) => {
+const ExpenseList = ({ expenses, onDelete }: Props) => {
   return (
     <table className='table table-bordered'>
       <thead>
