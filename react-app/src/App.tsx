@@ -11,12 +11,16 @@ import MainApp from './components/UpdateStateExercise/MainApp'
 import Pizza from './components/PizzaAddToArray/Pizza'
 import ShoppingCart from './components/ShoppingCart/ShoppingCart'
 import ExpandableText from './components/ExpandableText/ExpandableText'
+import Form from './components/Forms/Form'
+import FormUseState from './components/Forms/FormUseState'
+import FormHook from './components/Forms/FormHook'
+import FormWithZodValidation from './components/Forms/FormWithZodValidation'
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false)
 
   return (
-    <>
+    <div className='container'>
       {alertVisible && (
         <AlertDismiss onClose={() => setAlertVisible(false)}>
           Hello! <strong>I am full</strong>
@@ -64,7 +68,19 @@ function App() {
         enim cumque dolores ullam minima nostrum nam, autem sapiente cupiditate,
         excepturi possimus esse a.
       </ExpandableText>
-    </>
+      <br />
+      <br />
+      <Form />
+      <br />
+      <br />
+      <FormUseState />
+      <br />
+      <br />
+      <FormHook />
+      <br />
+      <br />
+      <FormWithZodValidation />
+    </div>
   )
 }
 
