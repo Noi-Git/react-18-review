@@ -12,6 +12,7 @@ import Pizza from './components/PizzaAddToArray/Pizza'
 import ShoppingCart from './components/ShoppingCart/ShoppingCart'
 import ExpandableText from './components/ExpandableText/ExpandableText'
 import Form from './components/Forms/Form'
+import FormUseState from './components/Forms/FormUseState'
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false)
@@ -66,6 +67,7 @@ function App() {
         excepturi possimus esse a.
       </ExpandableText>
       <Form />
+      <FormUseState />
     </div>
   )
 }

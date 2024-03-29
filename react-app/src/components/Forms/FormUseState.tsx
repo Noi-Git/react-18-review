@@ -2,26 +2,26 @@ import { useState } from 'react'
 
 const FormUseState = () => {
   const [person, setPerson] = useState({
-    name: '',
-    age: '',
+    nameUseState: '',
+    ageUseState: '',
   })
 
   const handleSubmit = (event: FormEvent) => {
     event?.preventDefault()
-    console.log(person.name)
+    console.log(person)
   }
 
   return (
     <form onSubmit={handleSubmit}>
       <div className='mb-3'>
         <label htmlFor='name' className='form-label'>
-          Name
+          Name Use State
         </label>
         <input
           onChange={(event) =>
-            setPerson({ ...person, name: event.target.value })
+            setPerson({ ...person, nameUseState: event.target.value })
           }
-          value={person.name}
+          value={person.nameUseState}
           id='name'
           type='text'
           className='form-control'
@@ -29,13 +29,13 @@ const FormUseState = () => {
       </div>
       <div className='mb-3'>
         <label htmlFor='age' className='form-label'>
-          Age
+          Age Use State
         </label>
         <input
           onChange={(event) =>
-            setPerson({ ...person, age: event.target.value })
+            setPerson({ ...person, ageUseState: event.target.value })
           }
-          value={person.age}
+          value={person.ageUseState}
           id='age'
           type='number'
           className='form-control'
