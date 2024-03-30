@@ -11,17 +11,16 @@ const FetchingData = () => {
   const [error, setError] = useState('')
 
   useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const res = await axios.get<User[]>(
-          'https://jsonplaceholder.typicode.com/users'
-        )
-        setUsers(res.data)
-      } catch (err) {
-        setError((err as AxiosError).message)
-      }
-    }
-    fetchUsers()
+    //cancle or abort async operation, such as fetch request or DOM manipulation or others that take a long time to complete
+    const controller = new AbortController()
+    axios
+      .get<User[]>('https://jsonplaceholder.typicode.com/xusers', {
+        signal: controller.signal,
+      })
+      .then((res) => setUsers(res.data))
+      .catch((err) => setError(err.message))
+
+    return () => controller.abort() // clean up function
   }, [])
 
   return (
