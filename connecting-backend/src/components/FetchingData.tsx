@@ -14,11 +14,14 @@ const FetchingData = () => {
     //cancle or abort async operation, such as fetch request or DOM manipulation or others that take a long time to complete
     const controller = new AbortController()
     axios
-      .get<User[]>('https://jsonplaceholder.typicode.com/xusers', {
+      .get<User[]>('https://jsonplaceholder.typicode.com/users', {
         signal: controller.signal,
       })
       .then((res) => setUsers(res.data))
-      .catch((err) => setError(err.message))
+      .catch((err) => {
+        if (err instanceof AxiosError) return
+        setError(err.message)
+      })
 
     return () => controller.abort() // clean up function
   }, [])
