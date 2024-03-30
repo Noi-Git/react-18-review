@@ -17,6 +17,7 @@ const FetchingData = () => {
       )
       setUsers(res.data)
     }
+    fetchUsers()
   }, [])
 
   return (
