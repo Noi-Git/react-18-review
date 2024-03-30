@@ -1,14 +1,19 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
+interface User {
+  id: number
+  name: string
+}
+
 const FetchingData = () => {
   const [user, setUser] = useState([])
 
   useEffect(() => {
     axios
-      .get('https://jsonplaceholder.typicode.com/users')
+      .get<User[]>('https://jsonplaceholder.typicode.com/users')
       // .then((res) => console.log(res))
-      .then((res) => console.log(res.data))
+      .then((res) => setUser(res.data))
   })
 
   return <>FetchingData</>
