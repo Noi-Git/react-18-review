@@ -7,16 +7,23 @@ interface User {
 }
 
 const FetchingData = () => {
-  const [user, setUser] = useState<User[]>([])
+  const [users, setUsers] = useState<User[]>([])
 
   useEffect(() => {
     axios
       .get<User[]>('https://jsonplaceholder.typicode.com/users')
-      // .then((res) => console.log(res))
-      .then((res) => setUser(res.data))
-  })
+      .then((res) => setUsers(res.data))
+  }, [])
 
-  return <>FetchingData</>
+  return (
+    <>
+      <ul>
+        {users.map((user) => (
+          <li key={user.id}>{user.name}</li>
+        ))}
+      </ul>
+    </>
+  )
 }
 
 export default FetchingData
