@@ -7,7 +7,7 @@ interface User {
 }
 
 const FetchingData = () => {
-  const [user, setUser] = useState([])
+  const [user, setUser] = useState<User[]>([])
 
   useEffect(() => {
     axios
