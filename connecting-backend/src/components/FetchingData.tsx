@@ -9,18 +9,24 @@ interface User {
 const FetchingData = () => {
   const [users, setUsers] = useState<User[]>([])
   const [error, setError] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
-    //cancle or abort async operation, such as fetch request or DOM manipulation or others that take a long time to complete
     const controller = new AbortController()
+
+    setIsLoading(true)
     axios
       .get<User[]>('https://jsonplaceholder.typicode.com/users', {
         signal: controller.signal,
       })
-      .then((res) => setUsers(res.data))
+      .then((res) => {
+        setUsers(res.data)
+        setIsLoading(false) //hide the loader when we get result
+      })
       .catch((err) => {
         if (err instanceof AxiosError) return
         setError(err.message)
+        setIsLoading(false) //hide the loader if request is rejected
       })
 
     return () => controller.abort() // clean up function
