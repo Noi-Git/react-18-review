@@ -21,13 +21,12 @@ const FetchingData = () => {
       })
       .then((res) => {
         setUsers(res.data)
-        setIsLoading(false) //hide the loader when we get result
       })
       .catch((err) => {
         if (err instanceof AxiosError) return
         setError(err.message)
-        setIsLoading(false) //hide the loader if request is rejected
       })
+      .finally(() => setIsLoading(false))
 
     return () => controller.abort() // clean up function
   }, [])
